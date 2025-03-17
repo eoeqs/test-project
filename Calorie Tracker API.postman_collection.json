@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "396e0db8-3123-473a-8b99-458ea4a84fd1",
+		"name": "Calorie Tracker API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39580732"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Иван\",\n  \"email\": \"ivan@example.com\",\n  \"age\": 30,\n  \"weight\": 70,\n  \"height\": 175,\n  \"gender\": \"MALE\",\n  \"goal\": \"MAINTENANCE\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Иван Петрович\",\n  \"email\": \"ivan.p@example.com\",\n  \"age\": 31,\n  \"weight\": 72,\n  \"height\": 176,\n  \"gender\": \"MALE\",\n  \"goal\": \"WEIGHT_LOSS\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dishes",
+			"item": [
+				{
+					"name": "Create Dish",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Омлет\",\n  \"calories\": 250,\n  \"proteins\": 15,\n  \"fats\": 18,\n  \"carbs\": 5\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/dishes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"dishes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Dish by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/dishes/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"dishes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Dish",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Омлет с сыром\",\n  \"calories\": 300,\n  \"proteins\": 20,\n  \"fats\": 22,\n  \"carbs\": 6\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/dishes/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"dishes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meals",
+			"item": [
+				{
+					"name": "Create Meal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dateTime\": \"2023-10-01T12:00:00\",\n  \"user\": {\"id\": 1},\n  \"dishes\": [{\"id\": 1}, {\"id\": 2}]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/meals",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Meal by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/meals/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meals",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Get Daily Report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/daily/1/2023-10-01",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"daily",
+								"1",
+								"2023-10-01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Daily Norm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/check-norm/1/2023-10-01",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"check-norm",
+								"1",
+								"2023-10-01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reports/history/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reports",
+								"history",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
